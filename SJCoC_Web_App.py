@@ -1,4 +1,3 @@
-# Nancy Tran
 # Creating a GUI for SJCOC with Streamlit
 
 import streamlit as st
@@ -12,7 +11,6 @@ import numpy as np
 from fpdf import FPDF
 from tempfile import NamedTemporaryFile
 from plotly.subplots import make_subplots
-
 
 # =============================================================================
 # Step 1: Go to Anaconda Prompt
@@ -28,8 +26,8 @@ from plotly.subplots import make_subplots
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
 # Title of the web app
-st.markdown("<h1 style='text-align: center; color: black;'>San Joaquin Continuum of Care</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center; color: black;'>Performance Report</h3>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>SJCoC Report</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: black;'>University of the Pacific Data Science Team</h3>", unsafe_allow_html=True)
 
 
 # =============================================================================
@@ -981,10 +979,3 @@ if uploaded_file:
         st.plotly_chart(SankeyDiagram(var_selected))
     
     st.markdown("<hr>", unsafe_allow_html=True)
-    
-
-
-
-
-
-
