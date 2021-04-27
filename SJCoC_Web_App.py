@@ -13,21 +13,12 @@ from tempfile import NamedTemporaryFile
 from plotly.subplots import make_subplots
 
 # =============================================================================
-# Step 1: Go to Anaconda Prompt
-# Step 2: cd Desktop/Capstone/Capstone_Code (or where you saved this py script)
-# Step 3: streamlit run testing_out_streamlit.py
-# Step 4: Open http://localhost:8501 in web browser
-
-# Youtube video: https://www.youtube.com/watch?v=w2PwerViVbA&t=14s
-# Download Excel File: https://discuss.streamlit.io/t/how-to-download-file-in-streamlit/1806/11
-
-# =============================================================================
 # Configurations
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
 # Title of the web app
-st.markdown("<h1 style='text-align: center; color: black;'>SJCoC Report</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center; color: black;'>University of the Pacific Data Science Team</h3>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>San Joaquin Continuum of Care</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: black;'>Performance Report</h3>", unsafe_allow_html=True)
 
 
 # =============================================================================
@@ -979,3 +970,10 @@ if uploaded_file:
         st.plotly_chart(SankeyDiagram(var_selected))
     
     st.markdown("<hr>", unsafe_allow_html=True)
+    
+
+
+
+
+
+
