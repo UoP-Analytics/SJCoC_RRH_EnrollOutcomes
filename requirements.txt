@@ -1,0 +1,11 @@
+pip
+streamlit
+plotly
+fpdf
+pybase64
+xlsxwriter
+xlrd
+openpyxl
+psutil
+orca
+kaleido
