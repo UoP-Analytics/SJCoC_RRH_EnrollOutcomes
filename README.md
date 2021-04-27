@@ -8,3 +8,6 @@ File upload requirements:
  - File sizes must be smaller than 200MB each
  - Files must be in Excel file format
  - Files must contain 2 sheets that are strictly named ***Entry data*** and ***Exit data***
+
+
+The web application supports multiple file uploads and will produce a cumulative report.
