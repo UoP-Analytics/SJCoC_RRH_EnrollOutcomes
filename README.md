@@ -1,6 +1,6 @@
 # San Joaquin Continuum of Care Report
 
-**SJCoC Reporting Web Application**: https://share.streamlit.io/jonmendelson/sjcoc_rrh_enrolloutcomes/main/SJCoC_Web_App.py
+**SJCoC Reporting Web Application**: 
 <br>
 <br>
 
