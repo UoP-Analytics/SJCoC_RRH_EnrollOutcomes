@@ -10,4 +10,4 @@ File upload requirements:
  - Files must contain 2 sheets that are strictly named ***Entry data*** and ***Exit data***
 
 
-The web application supports multiple file uploads and will produce a cumulative report.
+The web application supports multiple file uploads, of which will produce a cumulative report.
