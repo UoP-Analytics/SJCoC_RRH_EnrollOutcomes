@@ -8,3 +8,4 @@ sudo apt-get install xlrd
 sudo apt-get install openpyxl
 sudo apt-get install psutil
 sudo apt-get install kaleido
+sudo apt-get install orca
