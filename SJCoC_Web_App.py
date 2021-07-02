@@ -16,7 +16,9 @@ from plotly.subplots import make_subplots
 # Configurations
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
-# Title of the web app
+# Logo and Title of the web app
+st.markdown('<img style="float: left;" src="http://jhetrick.io/MSDS/uopdslogo.png" />', unsafe_allow_html=True)
+
 st.markdown("<h1 style='text-align: center; color: black;'>San Joaquin Continuum of Care</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: black;'>Enrollment Outcomes Report</h3>", unsafe_allow_html=True)
 
@@ -652,7 +654,13 @@ if uploaded_file:
     
     # ===================================================
     # Creating plots that will be placed in a downloadable pdf file(8 plots, sankey diagram not included)
-    
+
+    # adding progress bar for visualizations
+    st.markdown("Creating Data Visualizations")
+    st.markdown("<br>", unsafe_allow_html=True)
+    progbar = st.progress(10)
+   
+
     # Plot 1: Households per destination pie chart + table
     des = pd.DataFrame(d[d['Destination'] == 'Subtotal'].iloc[:,1])
     des['Destination Type'] = ['Permanent', 'Temporary', 'Institutional Setting', 'Other']
@@ -690,7 +698,8 @@ if uploaded_file:
             )
     )
     
-    
+    progbar.progress(20)
+
     # ===================================================
     # Plot 2: Creating household count horizontal bar chart  
     p = pd.DataFrame(d[d['Destination']=='Total'].iloc[:, 2:].transpose()).reset_index()
@@ -723,6 +732,9 @@ if uploaded_file:
     fig2.update_xaxes(showline=True, linewidth=0.5, linecolor='lightgray')
     fig2.update_yaxes(showline=True, linewidth=0.5, linecolor='lightgray')
     
+    progbar.progress(30)	
+
+
     # ===================================================
     # Plot 3: Creating an age range vertical bar chart
     NumberofClients = []
@@ -763,6 +775,7 @@ if uploaded_file:
         plot_bgcolor='white'
     )
 
+    progbar.progress(40)
     
     # ===================================================
     # Plot 4: Creating the gender demographic pie chart
@@ -802,7 +815,8 @@ if uploaded_file:
             x=0.8)
     )
 
-    
+    progbar.progress(50)
+
     # ===================================================
     # Plot 5: Creating the race demographic pie chart
     race = list(clean['Race'].unique())
@@ -839,6 +853,8 @@ if uploaded_file:
         x=0.8)
     )
     
+    progbar.progress(60)
+
     # ===================================================
     # Plot 6: Creating a the ethnicity demographic pie chart
     ethnicity = list(clean['Ethnicity'].unique())
@@ -875,15 +891,20 @@ if uploaded_file:
         x=0.8)
     )
     
-    
+    progbar.progress(70)
+
    # =================================================== 
     # Plot 7: Creating a line chart of individuals with Move-In date by calling our line_plot function we created above
     fig7 = line_plots(clean)[0]
     
+    progbar.progress(80)
+
     # ===================================================
     # Plot 8: Creating a line chart households with Move-In date by calling our line_plot function we created above
     fig8 = line_plots(clean)[1]
-    
+   
+    progbar.progress(90)
+
     # ===================================================
     # Taking all the visuals and placing them into a downloadable pdf file link
     
@@ -902,7 +923,9 @@ if uploaded_file:
 
     # Creating a download link for the temporary file that is holding the 8 charts
     html = create_pdf_download_link(pdf.output(dest="S").encode("latin-1"))
-    
+     
+    progbar.progress(100)
+
     #Creating a download link of the charts report pdf that will be visible on streamlit app
     st.markdown(html, unsafe_allow_html=True)
     st.markdown("<hr>", unsafe_allow_html=True)
