@@ -20,7 +20,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 st.markdown('<img style="float: left;" src="http://jhetrick.io/MSDS/uopdslogo.png" />', unsafe_allow_html=True)
 
 st.markdown("<h1 style='text-align: center; color: black;'>San Joaquin Continuum of Care</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center; color: black;'>Enrollment Outcomes Report</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: black;'>Enrollment Outcomes Report Generator</h3>", unsafe_allow_html=True)
 
 
 # =============================================================================
